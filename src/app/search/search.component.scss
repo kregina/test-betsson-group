@@ -1,0 +1,32 @@
+.search-box{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  input{
+    border: none;
+    padding: 20px 10px 20px 40px;
+    outline: none;
+    font: 300 24px Roboto;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2),
+                0 4px 5px 0 rgba(0, 0, 0, .14),
+                0 1px 10px 0 rgba(0, 0, 0, .12);
+  }
+}
+
+.animation{
+  animation: spin 500ms linear;
+
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(180deg);
+    }
+  }
+}
+

@@ -37,10 +37,12 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   imports: [
     CommonModule,
+    LayoutModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
@@ -79,6 +81,7 @@ import {
   ],
   declarations: [],
   exports: [
+    LayoutModule,
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,

@@ -1,14 +1,18 @@
 <div class="container" [class.is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="toolbar">
+
     <button mat-icon-button (click)="snav.toggle()" *ngIf="mobileQuery.matches">
       <mat-icon>menu</mat-icon>
     </button>
     <h1 class="app-name">Movies</h1>
     <div class="flex-spacer"></div>
-    <div *ngIf="!mobileQuery.matches">
-        <a mat-button routerLink=".">Home</a>
-        <a mat-button routerLink=".">My Movies</a>
-    </div>
+
+    <nav *ngIf="!mobileQuery.matches">
+      <a mat-button routerLink=".">Home</a>
+      <a mat-button routerLink=".">My Movies</a>
+    </nav>
+
+    <app-search></app-search>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
