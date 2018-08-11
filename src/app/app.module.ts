@@ -8,13 +8,17 @@ import { ShellComponent } from './shell/shell.component';
 import { SearchComponent } from './search/search.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
+import { MoviesCarouselComponent } from './movies-carousel/movies-carousel.component';
+import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShellComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    MoviesCarouselComponent,
+    FeaturedCarouselComponent
   ],
   imports: [
     BrowserModule,
