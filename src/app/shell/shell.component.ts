@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { slideRight } from '../shared/animations/animations';
+import { slideRight } from '@app/shared/animations';
 
 @Component({
   selector: 'app-shell',
