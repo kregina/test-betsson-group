@@ -1,7 +1,7 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 
-export const spin = (duration: number = 200) =>
-  trigger('spin', [
+export function spin(duration: number = 200) {
+  return trigger('spin', [
     transition('* => show', [
       animate(`${duration}ms`, keyframes([
         style({ transform: 'rotate(0)' }),
@@ -9,3 +9,4 @@ export const spin = (duration: number = 200) =>
       ]))
     ])
   ]);
+}
