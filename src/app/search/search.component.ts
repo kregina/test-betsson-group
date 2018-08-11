@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { fade, spin } from '../shared/animations/animations';
+import { fade, spin } from '@app/shared/animations';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  animations: [fade (), spin ()]
+  animations: [fade(), spin()]
 })
 export class SearchComponent {
   showSearchInput = false;

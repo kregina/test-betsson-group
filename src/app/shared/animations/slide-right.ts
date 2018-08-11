@@ -1,10 +1,10 @@
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
-export const slideRight = () =>
+export const slideRight =
   trigger('slideRight', [
     transition(':enter', [
-      animate('1500ms', keyframes([
-        style({ transform: 'translateX(-30%)' }),
+      animate('400ms', keyframes([
+        style({ transform: 'translateX(-100%)' }),
         style({ transform: 'translateX(0)' })
       ]))
     ])
