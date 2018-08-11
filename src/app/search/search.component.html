@@ -1,9 +1,7 @@
-<div class="search-box" [@searchAnimation]="stateName">
+<div class="search-box" [@fade]="stateName">
   <input type="text" placeholder="Search your favorite movie">
 </div>
 
-<a mat-icon-button (click)="toggleSearch()"
-  [color]="showSearchInput ? 'primary' : ''"
-  [ngClass]="showSearchInput ? 'animation' : ''">
+<a mat-icon-button (click)="toggleSearch()" [color]="showSearchInput ? 'primary' : ''" [@spin]="stateName">
   <mat-icon>{{ iconName }}</mat-icon>
 </a>
