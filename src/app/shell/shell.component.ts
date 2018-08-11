@@ -1,10 +1,12 @@
 import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
+import { slideRight } from '../shared/animations/animations';
 
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss']
+  styleUrls: ['./shell.component.scss'],
+  animations: [slideRight()]
 })
 export class ShellComponent implements OnDestroy {
 

@@ -26,8 +26,17 @@
 	}
 }
 
-h1.app-name {
-	margin-left: 8px;
+.brand-section{
+  .brand-logo{
+    max-width: 50%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .brand-name {
+    margin-left: 8px;
+    display: inline-block;
+  }
 }
 
 .sidenav-container {

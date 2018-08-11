@@ -5,7 +5,8 @@ import {
   animate,
   transition,
   query,
-  keyframes
+  keyframes,
+  stagger
 } from '@angular/animations';
 
 export const fade = (duration: number = 200) =>
@@ -25,3 +26,14 @@ export const spin = (duration: number = 200) =>
       ]))
     ])
   ]);
+
+export const slideRight = () =>
+  trigger('slideRight', [
+    transition(':enter', [
+      animate('1500ms', keyframes([
+        style({ transform: 'translateX(-30%)' }),
+        style({ transform: 'translateX(0)' })
+      ]))
+    ])
+  ]);
+

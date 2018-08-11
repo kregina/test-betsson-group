@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { fade, spin } from '../shared/animations/animations';
 
 @Component({
@@ -7,14 +7,10 @@ import { fade, spin } from '../shared/animations/animations';
   styleUrls: ['./search.component.scss'],
   animations: [fade (), spin ()]
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
   showSearchInput = false;
 
   constructor() {
-  }
-
-  ngOnInit() {
-    console.log(this.showSearchInput);
   }
 
   get iconName() {
