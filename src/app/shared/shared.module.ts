@@ -7,6 +7,7 @@ import { NgxY2PlayerModule } from 'ngx-y2-player';
 import { VideoPlayerComponent } from '@app/shared/video-player/video-player.component';
 import { MoviesCarouselComponent } from '@app/shared/movies-carousel/movies-carousel.component';
 import { RouterModule } from '@angular/router';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { RouterModule } from '@angular/router';
     NgxY2PlayerModule,
     RouterModule
   ],
-  declarations: [MoviesCarouselComponent, VideoPlayerComponent],
+  declarations: [MoviesCarouselComponent, VideoPlayerComponent, StarRatingComponent],
   exports: [
     CommonModule,
     FormsModule,
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     NgxY2PlayerModule,
     MoviesCarouselComponent,
     VideoPlayerComponent,
-    RouterModule
+    RouterModule,
+    StarRatingComponent
   ]
 })
 export class SharedModule { }
