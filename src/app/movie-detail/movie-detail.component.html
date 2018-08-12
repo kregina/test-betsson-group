@@ -1,7 +1,54 @@
-<div *ngIf="movie$ | async as movie">
-  <app-video-player></app-video-player>
+<section>
+  <mat-card class="card" *ngIf="movie$ | async as movie">
+    <mat-card-header>
+      <mat-card-title>
+        <button mat-icon-button color="primary">
+          <mat-icon aria-label="Add bookmark">{{ iconName }}</mat-icon>
+        </button>
+        <span>{{movie.title}} - {{movie.release_date | date: 'yyyy'}}</span>
+      </mat-card-title>
 
-  <section>
-      <h1>{{movie.id}}</h1>
-  </section>
+      <div class="flex-spacer"></div>
+
+      <mat-card-actions>
+        <button mat-icon-button *ngIf="!movie.video" (click)="videoToglle()">
+          <mat-icon aria-label="View trailler">ondemand_video</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="image">
+        <img src="https://picsum.photos/300/400/?1" [alt]="movie.original_title">
+      </div>
+      <div class="description">
+        <div class="rates">
+          <mat-icon aria-label="Movie ratte" color="accent">star</mat-icon>
+          <span>{{movie.vote_average}}
+            <small>/10</small>
+          </span>
+
+          <div class="flex-spacer"></div>
+
+          <button mat-button color="primary">
+            <mat-icon>star_border</mat-icon>
+            Rate this
+          </button>
+          <div class="rate">
+            <button mat-button color="accent">
+              <mat-icon>star_border</mat-icon>
+              Rate this
+            </button>
+          </div>
+        </div>
+        <p>
+          {{movie.overview}}
+        </p>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+</section>
+
+<div [@fade]="stateName">
+  <app-video-player></app-video-player>
 </div>

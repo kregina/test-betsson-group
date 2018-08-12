@@ -1,3 +1,75 @@
 section{
-  padding: 0 16px;
+  padding: 10px;
+
+  .card{
+    padding: 0;
+
+    .mat-card-header{
+      align-items: center;
+      background: rgba(97,97,97,.87);
+      padding: 10px;
+
+      .mat-card-title{
+        margin: 0 -16px;
+
+        span{
+          font-size: 18px;
+        }
+      }
+
+      .mat-card-actions{
+        margin: 0;
+      }
+    }
+
+    .mat-card-content{
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+
+      .image{
+        width: 100%;
+
+        img{
+          width: 100%;
+        }
+
+        @media (min-width: 768px) {
+          width: 30%;
+        }
+      }
+
+      .description{
+        width: 100%;
+
+        &::first-letter{
+          margin-left: 10px;
+        }
+
+        .rates{
+          display: flex;
+          align-items: center;
+
+          span{
+            margin-left: 5px;
+
+            small{
+              color: rgb(97,97,97);
+            }
+          }
+        }
+
+        @media (min-width: 768px) {
+          width: 70%;
+          margin-left: 10px;
+        }
+      }
+
+    }
+  }
+
 }

@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [MoviesCarouselComponent, VideoPlayerComponent],
   exports: [
+    CommonModule,
     FormsModule,
     MaterialModule,
     NgxHmCarouselModule,

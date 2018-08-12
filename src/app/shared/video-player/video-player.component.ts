@@ -11,7 +11,7 @@ export class VideoPlayerComponent implements OnInit {
   playerOptions: NgxY2PlayerOptions = {
     videoId: 'yjmp8CoZBIo',
     height: 'auto', // you can set 'auto', it will use container width to set size
-    width: 500,
+    width: 400,
     // when container resize, it will call resize function, you can custom this by set resizeDebounceTime, default is 200
     resizeDebounceTime: 0,
     playerVars: {
