@@ -6,7 +6,7 @@ import { slideRight } from '@app/shared/animations';
   selector: 'app-shell',
   templateUrl: './shell.component.html',
   styleUrls: ['./shell.component.scss'],
-  animations: [slideRight]
+  animations: [slideRight()]
 })
 export class ShellComponent implements OnDestroy {
 
