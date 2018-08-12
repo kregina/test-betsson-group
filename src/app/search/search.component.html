@@ -1,5 +1,7 @@
-<div class="search-box" [@fade]="stateName">
-  <input type="text" placeholder="Search your favorite movie">
+<div *ngIf="showSearchInput">
+  <div class="search-box" [@fade]="stateName">
+    <input type="text" placeholder="Search your favorite movie">
+  </div>
 </div>
 
 <a mat-icon-button (click)="toggleSearch()" [color]="showSearchInput ? 'primary' : ''" [@spin]="stateName">
