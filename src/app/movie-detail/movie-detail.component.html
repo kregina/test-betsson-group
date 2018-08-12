@@ -1,3 +1,6 @@
-<p>
-  movie-detail works!
-</p>
+<section *ngIf="movie$ | async as movie">
+  <app-video-player></app-video-player>
+
+  <h1>{{movie$ | async}}</h1>
+</section>
+

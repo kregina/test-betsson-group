@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { pluck, switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailComponent implements OnInit {
 
-  constructor() { }
+  movie$: Observable<any>;
+
+  constructor(public route: ActivatedRoute) {
+    const mock = {
+      title: 'Movie title',
+      url: 'https://picsum.photos/600/400/?1'
+    };
+    this.movie$ = this.route.params.pipe(
+      pluck('id'),
+      switchMap((id) => of({ ...mock, id }))
+    );
+  }
 
   ngOnInit() {
   }

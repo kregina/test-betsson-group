@@ -4,7 +4,11 @@ import { HomeComponent } from '@app/home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full'}
+  {
+    path: 'movie-detail',
+    loadChildren: 'app/movie-detail/movie-detail.module#MovieDetailModule'
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

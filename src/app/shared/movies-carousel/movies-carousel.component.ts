@@ -14,7 +14,7 @@ export class MoviesCarouselComponent implements OnInit {
     // const num = Math.floor(Math.random() * 1000);
     return {
       url: `https://picsum.photos/600/400/?${num}`,
-      title: `${num}`
+      id: `${num}`
     };
   });
 

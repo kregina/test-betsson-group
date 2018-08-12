@@ -8,7 +8,6 @@ import { ShellComponent } from './shell/shell.component';
 import { SearchComponent } from './search/search.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { MoviesCarouselComponent } from './movies-carousel/movies-carousel.component';
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 
 @NgModule({
@@ -17,14 +16,13 @@ import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel
     ShellComponent,
     SearchComponent,
     HomeComponent,
-    MoviesCarouselComponent,
     FeaturedCarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
