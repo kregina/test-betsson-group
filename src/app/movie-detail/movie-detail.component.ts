@@ -3,12 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { pluck, switchMap, tap } from 'rxjs/operators';
 import { fade, slideRight } from '@app/shared/animations';
+import { slideLeft } from '@app/shared/animations/slide-left';
 
 @Component({
   selector: 'app-movie-detail',
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.scss'],
-  animations: [fade(), slideRight(-20, 300)]
+  animations: [fade(), slideRight(-20, 500), slideLeft(20, 500)]
 })
 export class MovieDetailComponent implements OnInit {
   bookmark = true;

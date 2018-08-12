@@ -2,7 +2,7 @@
   <section>
     <mat-card class="card">
       <mat-card-header>
-        <mat-card-title>
+        <mat-card-title [@slideRight]>
           <button mat-icon-button color="primary">
             <mat-icon aria-label="Add bookmark">{{ iconName }}</mat-icon>
           </button>
@@ -11,8 +11,8 @@
 
         <div class="flex-spacer"></div>
 
-        <mat-card-actions>
-          <button mat-icon-button *ngIf="!movie.video" (click)="videoToglle()">
+        <mat-card-actions [@slideLeft]>
+          <button mat-icon-button *ngIf="movie.video" (click)="videoToglle()">
             <mat-icon aria-label="View trailler">ondemand_video</mat-icon>
           </button>
         </mat-card-actions>
@@ -23,17 +23,15 @@
         </div>
         <div class="description">
           <div class="ratings">
-            <div [@slideRight]>
-              <mat-icon aria-label="Movie ratte" color="accent">star</mat-icon>
-              <span>{{movie.vote_average}}
-                <small>/10</small>
-              </span>
-            </div>
+            <mat-icon aria-label="Movie ratte" color="accent" [@slideRight]>star</mat-icon>
+            <span [@slideRight]>{{movie.vote_average}}
+              <small>/10</small>
+            </span>
 
             <div class="flex-spacer"></div>
 
 
-            <div class="rating">
+            <div class="rating" [@slideLeft]>
               <div *ngIf="showRating">
                 <app-star-rating [rating]="rating" [starCount]="10" [color]="'accent'" (ratingUpdated)="onRatingChanged($event)" [@fade]="stateRating"></app-star-rating>
               </div>
