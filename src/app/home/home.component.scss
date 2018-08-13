@@ -1,4 +1,7 @@
 .container{
-  margin-top: -150px;
   position: relative;
+
+  @media (min-width: 768px) {
+    margin-top: -10%;
+  }
 }

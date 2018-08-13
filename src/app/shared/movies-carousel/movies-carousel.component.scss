@@ -36,12 +36,12 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0.6);
         width: 100%;
-        padding: 0 15px 15px 15px;
+        padding: 0 0 5px 5px;
+        display: none;
 
-        .button-row{
-          a {
-            margin-left: 8px;
-          }
+        @media (min-width: 768px) {
+          display: block;
+          padding: 0 0 15px 15px;
         }
       }
     }
