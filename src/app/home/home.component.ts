@@ -8,14 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
-  sectionMovie = 'Top rated movies';
-
-  featured$: Observable<Movie>;
   sections: { title: string, source$: Observable<PagedMovies> }[];
 
   constructor(private service: ThemoviedbService) {
-    this.featured$ = this.service.getFeaturedMovie();
     this.sections = [
       ['Now Playing', MovieSection.NowPlaying],
       ['Popular', MovieSection.Popular],
@@ -25,5 +20,13 @@ export class HomeComponent {
       title: tuple[0],
       source$: this.service.getMovies(tuple[1] as MovieSection)
     }));
+  }
+
+  get featuredSection() {
+    return this.sections[0];
+  }
+
+  get otherSections() {
+    return this.sections.slice(1);
   }
 }

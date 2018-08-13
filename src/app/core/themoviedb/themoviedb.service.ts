@@ -13,14 +13,6 @@ export class ThemoviedbService {
   constructor(private http: HttpClient) { }
 
   @Cacheable()
-  getFeaturedMovie(): Observable<Movie> {
-    return this.http.get<Movie>(`${environment.themoviedb.apiUrl}/movie/latest`, {
-      params: new HttpParams()
-        .set('api_key', environment.themoviedb.apiKey)
-    });
-  }
-
-  @Cacheable()
   getMovies(section: MovieSection, page: number = 1): Observable<PagedMovies> {
     return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${section}`, {
       params: new HttpParams()
