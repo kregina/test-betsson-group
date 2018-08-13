@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Movie, PagedMovies } from '@app/core/themoviedb';
 import { environment } from '@env/environment';
 
@@ -7,7 +7,7 @@ import { environment } from '@env/environment';
   templateUrl: './featured-carousel.component.html',
   styleUrls: ['./featured-carousel.component.scss']
 })
-export class FeaturedCarouselComponent implements OnInit {
+export class FeaturedCarouselComponent {
   @Input() source: PagedMovies;
 
   index = 0;
@@ -15,18 +15,6 @@ export class FeaturedCarouselComponent implements OnInit {
   direction = 'right';
   directionToggle = true;
   autoplay = true;
-  bannerList;
-
-  constructor() { }
-
-  ngOnInit() {
-    this.bannerList = this.source.results.map((result) => {
-      return {
-        url: `${environment.themoviedb.imageUrl}/w1280${result.backdrop_path}?api_key=${environment.themoviedb.apiKey}`,
-        title: `${result.title}`
-      };
-    });
-  }
 
   indexChanged(index) {
   }

@@ -19,7 +19,7 @@
       </mat-card-header>
       <mat-card-content>
         <div class="image">
-          <img [src]="https://picsum.photos/300/400/?1" [alt]="movie.original_title">
+          <img [src]="movie.poster_path | image:300" [alt]="movie.original_title">
         </div>
         <div class="description">
           <div class="ratings">

@@ -8,6 +8,8 @@ import { VideoPlayerComponent } from '@app/shared/video-player/video-player.comp
 import { MoviesCarouselComponent } from '@app/shared/movies-carousel/movies-carousel.component';
 import { RouterModule } from '@angular/router';
 import { StarRatingComponent } from './star-rating/star-rating.component';
+import { ImagePipe } from './themoviedb/image.pipe';
+import { BackgroundimagePipe } from './themoviedb/backgroundimage.pipe';
 
 @NgModule({
   imports: [
@@ -18,7 +20,13 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     NgxY2PlayerModule,
     RouterModule
   ],
-  declarations: [MoviesCarouselComponent, VideoPlayerComponent, StarRatingComponent],
+  declarations: [
+    MoviesCarouselComponent,
+    VideoPlayerComponent,
+    StarRatingComponent,
+    ImagePipe,
+    BackgroundimagePipe
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -28,7 +36,9 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     MoviesCarouselComponent,
     VideoPlayerComponent,
     RouterModule,
-    StarRatingComponent
+    StarRatingComponent,
+    ImagePipe,
+    BackgroundimagePipe
   ]
 })
 export class SharedModule { }
