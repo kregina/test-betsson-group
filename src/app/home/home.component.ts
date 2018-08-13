@@ -12,10 +12,10 @@ export class HomeComponent {
 
   constructor(private service: ThemoviedbService) {
     this.sections = [
+      ['Upcoming', MovieSection.Upcoming],
       ['Now Playing', MovieSection.NowPlaying],
       ['Popular', MovieSection.Popular],
-      ['Top Rated', MovieSection.TopRated],
-      ['Upcoming', MovieSection.Upcoming]
+      ['Top Rated', MovieSection.TopRated]
     ].map((tuple) => ({
       title: tuple[0],
       source$: this.service.getMovies(tuple[1] as MovieSection)
