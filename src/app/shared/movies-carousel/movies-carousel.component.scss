@@ -1,5 +1,9 @@
 .container{
-  padding-left: 40px;
+  padding-left: 25px;
+
+  @media (min-width: 768px) {
+    padding-left: 60px;
+  }
 
   .title{
     padding: 15px 5px;
@@ -20,20 +24,26 @@
     width: 100%;
     display: block;
     .img {
-      cursor: pointer;
       width: 100%;
       display: block;
       background-size: cover;
-      background-position: center;
+      background-position: top center;
       height: 0;
       padding-bottom: 100%;
-    }
-    a {
-      padding: 1em 1em;
-      padding-bottom: 5px;
-      position: relative;
-      white-space: nowrap;
-      background: pink;
+
+      .item-details{
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        padding: 0 15px 15px 15px;
+
+        .button-row{
+          a {
+            margin-left: 8px;
+          }
+        }
+      }
     }
   }
 }

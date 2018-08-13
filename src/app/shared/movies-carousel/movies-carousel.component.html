@@ -3,8 +3,15 @@
   <ngx-hm-carousel (ngModelChange)="change($event)" align="left" show-num="4" [drag-many]="true" class="link-container">
     <section ngx-hm-carousel-container class="content">
       <article class="item cursor-pointer t-al-c" *ngFor="let movie of source.results" ngx-hm-carousel-item>
-        <a class="img" [style.backgroundImage]="movie.poster_path | image:780 | backgroundimage" [routerLink]="['/movie-detail', movie.id]">
-        </a>
+        <div class="img" [style.backgroundImage]="movie.poster_path | image:780 | backgroundimage">
+          <div class="item-details">
+            <p>{{movie.title}}</p>
+            <div class="button-row">
+              <app-bookmark></app-bookmark>
+              <a mat-stroked-button [routerLink]="['/movie-detail', movie.id]">+ Details</a>
+            </div>
+          </div>
+        </div>
       </article>
     </section>
   </ngx-hm-carousel>
