@@ -1,0 +1,8 @@
+<button mat-icon-button color="primary" (click)="addBookmark()" *ngIf="buttonType == 'icon'">
+  <mat-icon aria-label="Add bookmark">{{ bookmark ? 'bookmark' : 'bookmark_border' }}</mat-icon>
+</button>
+
+<button mat-stroked-button (click)="addBookmark()" *ngIf="buttonType != 'icon'">
+  <mat-icon aria-label="Add bookmark">{{ bookmark ? 'bookmark' : 'bookmark_border' }}</mat-icon>
+  {{bookmark ? '- Bookmark': '+ Bookmark'}}
+</button>

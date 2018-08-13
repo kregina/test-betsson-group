@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { ImagePipe } from './themoviedb/image.pipe';
 import { BackgroundimagePipe } from './themoviedb/backgroundimage.pipe';
+import { BookmarkComponent } from './bookmark/bookmark.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { BackgroundimagePipe } from './themoviedb/backgroundimage.pipe';
     VideoPlayerComponent,
     StarRatingComponent,
     ImagePipe,
-    BackgroundimagePipe
+    BackgroundimagePipe,
+    BookmarkComponent
   ],
   exports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { BackgroundimagePipe } from './themoviedb/backgroundimage.pipe';
     RouterModule,
     StarRatingComponent,
     ImagePipe,
-    BackgroundimagePipe
+    BackgroundimagePipe,
+    BookmarkComponent
   ]
 })
 export class SharedModule { }
