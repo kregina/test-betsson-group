@@ -1,5 +1,9 @@
 .container{
-  padding-left: 40px;
+  padding-left: 25px;
+
+  @media (min-width: 768px) {
+    padding-left: 60px;
+  }
 
   .title{
     padding: 15px 5px;
@@ -24,7 +28,7 @@
       width: 100%;
       display: block;
       background-size: cover;
-      background-position: center;
+      background-position: top center;
       height: 0;
       padding-bottom: 100%;
     }

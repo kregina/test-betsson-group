@@ -6,13 +6,15 @@
   LOADING...
 </ng-template>
 
-<ng-container *ngFor="let section of otherSections">
-  <app-movies-carousel
-    *ngIf="section.source$ | async as source; else loadingSection"
-    [title]="section.title"
-    [source]="source">
-  </app-movies-carousel>
-  <ng-template #loadingSection>
-    LOADING...
-  </ng-template>
-</ng-container>
+<div class="container">
+  <ng-container *ngFor="let section of otherSections">
+    <app-movies-carousel
+      *ngIf="section.source$ | async as source; else loadingSection"
+      [title]="section.title"
+      [source]="source">
+    </app-movies-carousel>
+    <ng-template #loadingSection>
+      LOADING...
+    </ng-template>
+  </ng-container>
+</div>
