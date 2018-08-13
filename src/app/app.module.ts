@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './shell/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RouterModule } from '@angular/router';
     ShellComponent,
     SearchComponent,
     HomeComponent,
-    FeaturedCarouselComponent
+    FeaturedCarouselComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
