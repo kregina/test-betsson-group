@@ -9,6 +9,7 @@ import { SearchComponent } from './search/search.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     SharedModule,
   ],
   providers: [],

@@ -19,7 +19,7 @@ export class ThemoviedbService {
   }
 
   getMovies(section: MovieSection, page: number = 1): Observable<PagedMovies> {
-    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movies/${section}`, {
+    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${section}`, {
       params: new HttpParams()
         .set('api_key', environment.themoviedb.apiKey)
         .set('page', page.toString())

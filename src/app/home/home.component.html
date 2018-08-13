@@ -1,3 +1,4 @@
-<app-featured-carousel></app-featured-carousel>
-<app-movies-carousel [title]="sectionMovie"></app-movies-carousel>
+<app-featured-carousel [source]="featured$ | async"></app-featured-carousel>
 
+<app-movies-carousel *ngFor="let section of sections" [title]="section.title" [source]="section.source$ | async">
+</app-movies-carousel>

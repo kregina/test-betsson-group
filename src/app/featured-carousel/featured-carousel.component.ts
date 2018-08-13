@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '@app/core/themoviedb';
 
 @Component({
   selector: 'app-featured-carousel',
@@ -6,28 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./featured-carousel.component.scss']
 })
 export class FeaturedCarouselComponent implements OnInit {
+  @Input() source: Movie;
 
   index = 0;
   infinite = true;
   direction = 'right';
   directionToggle = true;
   autoplay = true;
-  bannerList = '1234567890'.split('').map((x, i) => {
-    const num = i;
-    // const num = Math.floor(Math.random() * 1000);
-    return {
-      url: `https://picsum.photos/600/400/?${num}`,
-      title: `${num}`
-    };
-  });
+  featuredMovie = this.source;
 
   constructor() { }
 
   ngOnInit() {
+    console.log('source', this.source);
   }
 
   indexChanged(index) {
-    console.log(index);
   }
 
 }

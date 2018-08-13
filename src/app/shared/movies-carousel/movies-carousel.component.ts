@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PagedMovies } from '@app/core/themoviedb';
 
 @Component({
   selector: 'app-movies-carousel',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MoviesCarouselComponent implements OnInit {
 
   @Input() title: string;
+  @Input() source: PagedMovies;
 
   menus = '1234567890'.split('').map((x, i) => {
     const num = i;
