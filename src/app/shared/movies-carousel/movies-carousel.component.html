@@ -1,6 +1,6 @@
 <section class="container">
   <div class="title"> {{title}}</div>
-  <ngx-hm-carousel (ngModelChange)="change($event)" align="left" show-num="auto" [drag-many]="true" class="link-container">
+  <ngx-hm-carousel (ngModelChange)="change($event)" align="left" show-num="4" [drag-many]="true" class="link-container">
     <section ngx-hm-carousel-container class="content">
       <article class="item cursor-pointer t-al-c" *ngFor="let item of menus" ngx-hm-carousel-item>
         <a class="img" [style.backgroundImage]="'url('+item.url+')'" [routerLink]="['/movie-detail', item.id]">
