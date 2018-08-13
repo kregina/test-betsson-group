@@ -8,18 +8,28 @@
   class="carousel c-accent">
 
   <section ngx-hm-carousel-container class="content">
-    <article class="item cursor-pointer"
+    <article class="item cursor-pointer overlay"
       *ngFor="let movie of source.results"
       ngx-hm-carousel-item>
       <div class="img"
         [style.backgroundImage]="movie.backdrop_path | image:1280 | backgroundimage">
-
-        <h3>{{movie.title}}</h3>
+        <div class="item-detail">
+          <div class="item-title">
+            <h1>{{movie.title}}</h1>
+          </div>
+          <div class="item-description">
+            <p>{{movie.overview}}</p>
+          </div>
+          <div class="button-row">
+            <app-bookmark></app-bookmark>
+            <a mat-stroked-button [routerLink]="['/movie-detail', movie.id]">+ Details</a>
+          </div>
+        </div>
       </div>
     </article>
   </section>
 
-  <ng-template #carouselPrev>
+  <!-- <ng-template #carouselPrev>
     <div class="click-area">
       <i class="material-icons">keyboard_arrow_left</i>
     </div>
@@ -33,7 +43,7 @@
   <ng-template #carouselDot let-model>
     <div class="ball bg-accent"
       [class.visible]="model.index === model.currentIndex"></div>
-  </ng-template>
+  </ng-template> -->
 
   <ng-template #carouselProgress let-progress>
     <div class="progress" *ngIf="progress > 0"

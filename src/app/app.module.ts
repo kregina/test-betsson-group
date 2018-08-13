@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

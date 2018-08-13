@@ -9,6 +9,7 @@ import { environment } from '@env/environment';
 })
 export class FeaturedCarouselComponent {
   @Input() source: PagedMovies;
+  bookmark;
 
   index = 0;
   infinite = true;
