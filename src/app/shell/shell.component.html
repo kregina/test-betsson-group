@@ -14,11 +14,14 @@
 
     <nav *ngIf="!mobileQuery.matches">
       <a mat-button routerLink=".">Home</a>
+      <a mat-button color="accent" (click)="openSubmenu()">Genres</a>
       <a mat-button routerLink=".">My Movies</a>
     </nav>
 
     <app-search></app-search>
   </mat-toolbar>
+
+  <app-submenu *ngIf="showSubmenu" [genresList]="genres$"></app-submenu>
 
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">

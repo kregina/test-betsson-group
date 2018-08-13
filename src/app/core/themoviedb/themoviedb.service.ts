@@ -47,7 +47,7 @@ export class ThemoviedbService {
 
   @Cacheable()
   getAllGenders(): Observable<MoviesGenres> {
-    return this.http.get<MoviesGenres>(`${environment.themoviedb.apiUrl}/genders`, {
+    return this.http.get<MoviesGenres>(`${environment.themoviedb.apiUrl}/genre/movie/list`, {
       params: new HttpParams()
         .set('api_key', environment.themoviedb.apiKey)
     });
