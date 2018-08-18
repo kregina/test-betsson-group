@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { GenresComponent } from '@app/genres/genres.component';
 
 const routes: Routes = [
-  {path: '', component: GenresComponent}
+  { path: '', component: GenresComponent },
+  { path: ':id', component: GenresComponent }
 ];
 
 @NgModule({

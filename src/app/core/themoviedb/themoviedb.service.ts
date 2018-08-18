@@ -31,10 +31,11 @@ export class ThemoviedbService {
   }
 
   @Cacheable()
-  getMovesByGenre(gender_id: number, page: number = 1): Observable<PagedMovies> {
-    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${gender_id}`, {
+  getMovesByGenre(gender_id, page: number = 1): Observable<PagedMovies> {
+    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/discover/movie`, {
       params: new HttpParams()
         .set('api_key', environment.themoviedb.apiKey)
+        .set('with_genres', gender_id)
     });
   }
 
