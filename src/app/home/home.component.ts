@@ -18,7 +18,7 @@ export class HomeComponent {
       ['Top Rated', MovieSection.TopRated]
     ].map((tuple) => ({
       title: tuple[0],
-      source$: this.service.getMovies(tuple[1] as MovieSection)
+      source$: this.service.getMovesBySecton(tuple[1] as MovieSection)
     }));
   }
 

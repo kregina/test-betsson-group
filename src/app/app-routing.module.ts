@@ -8,6 +8,10 @@ const routes: Routes = [
     path: 'movie-detail',
     loadChildren: 'app/movie-detail/movie-detail.module#MovieDetailModule'
   },
+  {
+    path: 'genres',
+    loadChildren: 'app/genres/genres.module#GenresModule'
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 

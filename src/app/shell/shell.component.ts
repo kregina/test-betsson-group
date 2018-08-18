@@ -11,25 +11,16 @@ import { Observable } from 'rxjs';
   animations: [slideRight(-100, 500)]
 })
 export class ShellComponent implements OnDestroy {
-  genres$: Observable<MoviesGenres>;
-  showSubmenu = false;
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private service: ThemoviedbService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-    this.genres$ = this.service.getAllGenders();
-    console.log('this.genres$', this.genres$.source);
   }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-
-  openSubmenu() {
-    this.showSubmenu = !this.showSubmenu;
-  }
-
 }

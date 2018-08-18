@@ -12,7 +12,6 @@ import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shell/footer/footer.component';
-import { SubmenuComponent } from './shell/submenu/submenu.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { SubmenuComponent } from './shell/submenu/submenu.component';
     SearchComponent,
     HomeComponent,
     FeaturedCarouselComponent,
-    FooterComponent,
-    SubmenuComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

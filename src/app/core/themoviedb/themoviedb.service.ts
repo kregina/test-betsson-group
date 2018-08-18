@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '@env/environment';
-import { Movie, PagedMovies, MovieDetail, Credits, MovieKeywords, MoviesGenres, MovieSection } from './models';
+import { Movie, PagedMovies, MovieDetail, Credits, MovieKeywords, MoviesGenres, MovieSection, Genre } from './models';
 import { Observable } from 'rxjs';
 import { Cacheable } from 'ngx-cacheable';
 
@@ -13,11 +13,18 @@ export class ThemoviedbService {
   constructor(private http: HttpClient) { }
 
   @Cacheable()
-  getMovies(section: MovieSection, page: number = 1): Observable<PagedMovies> {
+  getMovesBySecton(section: MovieSection, page: number = 1): Observable<PagedMovies> {
     return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${section}`, {
       params: new HttpParams()
         .set('api_key', environment.themoviedb.apiKey)
         .set('page', page.toString())
+    });
+  }
+  @Cacheable()
+  getMovesByGenre(gender_id: number, page: number = 1): Observable<PagedMovies> {
+    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${gender_id}`, {
+      params: new HttpParams()
+        .set('api_key', environment.themoviedb.apiKey)
     });
   }
 
