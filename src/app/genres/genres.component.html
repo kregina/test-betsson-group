@@ -1,3 +1,22 @@
-<p>
-  genres works!
-</p>
+<section>
+  <div class="chips" *ngIf="genres$ | async as genres; else loading">
+    <mat-chip-list>
+      <mat-chip color="accent" selected *ngFor="let genre of genres">{{genre.name}}</mat-chip>
+    </mat-chip-list>
+  </div>
+  <ng-template #loading>
+    LOADING...
+  </ng-template>
+
+  <div class="cards" *ngIf="movies$ | async as movies; else loading">
+    <mat-card class="card" *ngFor="let movie of movies">
+      <mat-card-header>
+        <app-bookmark buttonType="icon"></app-bookmark>
+      </mat-card-header>
+      <mat-card-content>
+        <img [src]="movie.poster_path | image:500">
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</section>

@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { GenresRoutingModule } from './genres-routing.module';
 import { GenresComponent } from './genres.component';
+import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    GenresRoutingModule
+    GenresRoutingModule,
+    SharedModule
   ],
   declarations: [GenresComponent]
 })

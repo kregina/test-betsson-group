@@ -13,6 +13,15 @@ export class ThemoviedbService {
   constructor(private http: HttpClient) { }
 
   @Cacheable()
+  getAllMovies(page: number = 1): Observable<PagedMovies> {
+    return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/discover/movie`, {
+      params: new HttpParams()
+        .set('api_key', environment.themoviedb.apiKey)
+        .set('page', page.toString())
+    });
+  }
+
+  @Cacheable()
   getMovesBySecton(section: MovieSection, page: number = 1): Observable<PagedMovies> {
     return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${section}`, {
       params: new HttpParams()
@@ -20,6 +29,7 @@ export class ThemoviedbService {
         .set('page', page.toString())
     });
   }
+
   @Cacheable()
   getMovesByGenre(gender_id: number, page: number = 1): Observable<PagedMovies> {
     return this.http.get<PagedMovies>(`${environment.themoviedb.apiUrl}/movie/${gender_id}`, {
