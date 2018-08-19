@@ -1,26 +1,4 @@
 <div class="container" [class.is-mobile]="mobileQuery.matches">
-  <mat-toolbar color="primary" class="toolbar">
-
-    <button mat-icon-button (click)="snav.toggle()" *ngIf="mobileQuery.matches">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <div class="brand-section" [@slideRight]>
-      <a routerLink=".">
-        <img class="brand-logo" src="../../assets/images/popcorn.svg" alt="PopCorn Logo">
-      </a>
-      <h1 class="brand-name">Movies</h1>
-    </div>
-    <div class="flex-spacer"></div>
-
-    <nav *ngIf="!mobileQuery.matches">
-      <a mat-button routerLink=".">Home</a>
-      <a mat-button [routerLink]="['/genres']">Genres</a>
-      <a mat-button routerLink=".">My Movies</a>
-    </nav>
-
-    <app-search></app-search>
-  </mat-toolbar>
-
   <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
@@ -29,9 +7,30 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
-      <ng-content></ng-content>
-      <app-footer></app-footer>
-    </mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar"
+      [class.fixed]="fixedHeader$ | async"
+      [class.transparent]="transparentHeader$ | async">
+      <button mat-icon-button (click)="snav.toggle()" *ngIf="mobileQuery.matches">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="brand-section" [@slideRight]>
+        <a routerLink=".">
+          <img class="brand-logo" src="/assets/images/popcorn.svg" alt="PopCorn Logo">
+        </a>
+        <h1 class="brand-name">Movies</h1>
+      </div>
+      <div class="flex-spacer"></div>
+
+      <nav *ngIf="!mobileQuery.matches">
+        <a mat-button routerLink=".">Home</a>
+        <a mat-button [routerLink]="['/genres']">Genres</a>
+        <a mat-button routerLink=".">My Movies</a>
+      </nav>
+
+      <app-search></app-search>
+    </mat-toolbar>
+
+    <ng-content></ng-content>
+    <app-footer></app-footer>
   </mat-sidenav-container>
 </div>

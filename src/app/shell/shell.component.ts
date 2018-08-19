@@ -1,8 +1,10 @@
-import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectorRef, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { slideRight } from '@app/shared/animations';
-import { ThemoviedbService, MoviesGenres } from '@app/core/themoviedb';
-import { Observable } from 'rxjs';
+import { MatSidenavContainer } from '@angular/material';
+import { map, pluck, tap, distinctUntilChanged, filter, switchMap, startWith } from 'rxjs/operators';
+import { Observable, combineLatest } from 'rxjs';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-shell',
@@ -10,14 +12,45 @@ import { Observable } from 'rxjs';
   styleUrls: ['./shell.component.scss'],
   animations: [slideRight(-100, 500)]
 })
-export class ShellComponent implements OnDestroy {
-  mobileQuery: MediaQueryList;
+export class ShellComponent implements OnDestroy, AfterViewInit {
   private _mobileQueryListener: () => void;
+  mobileQuery: MediaQueryList;
+  scrollTop$: Observable<boolean>;
+  fixedHeader$: Observable<boolean>;
+  transparentHeader$: Observable<boolean>;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  @ViewChild(MatSidenavContainer) sidenavContainer: MatSidenavContainer;
+
+  constructor(private changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, router: Router, route: ActivatedRoute) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
-    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this._mobileQueryListener = () => this.changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
+
+    this.fixedHeader$ = router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        map(_ => route),
+        pluck('firstChild', 'data'),
+        switchMap(data => data as Observable<any>),
+        pluck('fixedHeader')
+      );
+  }
+
+  ngAfterViewInit() {
+    this.scrollTop$ = this.sidenavContainer.scrollable
+      .elementScrolled()
+      .pipe(
+        pluck('target', 'scrollTop'),
+        startWith(0),
+        map((scrollTop: number) => scrollTop > 100)
+      );
+
+    this.transparentHeader$ =
+      combineLatest(this.fixedHeader$, this.scrollTop$)
+      .pipe(
+        map(([fixedHeader, scrollTop]) => fixedHeader && !scrollTop),
+        distinctUntilChanged(),
+        tap(() => this.changeDetectorRef.detectChanges()));
   }
 
   ngOnDestroy(): void {
