@@ -10,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'genres',
-    loadChildren: 'app/genres/genres.module#GenresModule'
+    loadChildren: 'app/genres/genres.module#GenresModule',
+    data: { showSearch: true }
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
@@ -19,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

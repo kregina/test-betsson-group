@@ -3,7 +3,9 @@
     <mat-chip-list>
       <mat-chip color="accent" [selected]="link.isActive"
         *ngFor="let genre of genres" routerLinkActive #link="routerLinkActive"
-        [routerLink]="['/genres', genre.id]">{{genre.name}}</mat-chip>
+        [routerLink]="['/genres']"
+        [queryParams]="{genre: genre.id}"
+        >{{genre.name}}</mat-chip>
     </mat-chip-list>
   </div>
   <ng-template #loading>

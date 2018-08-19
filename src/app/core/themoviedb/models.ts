@@ -29,6 +29,18 @@ export interface PagedMovies {
   total_pages: number;
 }
 
+export interface Result {
+  id: number;
+  name: string;
+}
+
+export interface PagedKeywords {
+  page: number;
+  results: Keyword[];
+  total_pages: number;
+  total_results: number;
+}
+
 export interface Genre {
   id: number;
   name: string;
@@ -119,4 +131,3 @@ export interface MovieKeywords {
 export interface MoviesGenres {
   genres: Genre[];
 }
-

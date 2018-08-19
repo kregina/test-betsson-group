@@ -1,9 +1,15 @@
-<div *ngIf="showSearchInput">
-  <div class="search-box" [@fade]="stateName">
-    <input type="text" placeholder="Search your favorite movie">
+
+<div *ngIf="show">
+  <div class="search-box" [@fade]="show ? 'show' : 'hide'">
+    <input type="text"
+      placeholder="Search your favorite movie"
+      (change)="updateSearch($event.target.value)">
   </div>
 </div>
 
-<a mat-icon-button (click)="toggleSearch()" [color]="showSearchInput ? 'accent' : ''" [@spin]="stateName">
-  <mat-icon>{{ iconName }}</mat-icon>
+<a mat-icon-button
+  [routerLink]="show ? ['/home'] : ['/genres']"
+  [color]="show ? 'accent' : ''"
+  [@spin]="show ? 'show' : 'hide'">
+  <mat-icon>{{ show ? 'close' : 'search' }}</mat-icon>
 </a>

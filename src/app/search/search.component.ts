@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { fade, spin } from '@app/shared/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -8,20 +9,14 @@ import { fade, spin } from '@app/shared/animations';
   animations: [fade(), spin()]
 })
 export class SearchComponent {
-  showSearchInput = false;
+  @Input()
+  show: boolean;
 
-  constructor() {
-  }
+  constructor(private router: Router) {}
 
-  get iconName() {
-    return this.showSearchInput ? 'close' : 'search';
-  }
-
-  get stateName() {
-    return this.showSearchInput ? 'show' : 'hide';
-  }
-
-  toggleSearch() {
-    this.showSearchInput = !this.showSearchInput;
+  updateSearch(value: string) {
+    this.router.navigate(['/genres'], {
+      queryParams: { search: value ? value : undefined }
+    });
   }
 }
