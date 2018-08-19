@@ -36,7 +36,7 @@ export class ThemoviedbService {
   @Cacheable()
   searchKeywords(search: string, page: number = 1): Observable<PagedMovies> {
     return this.http.get<PagedMovies>(
-      `${environment.themoviedb.apiUrl}/searcb/keyword`,
+      `${environment.themoviedb.apiUrl}/search/keyword`,
       {
         params: new HttpParams()
           .set('api_key', environment.themoviedb.apiKey)

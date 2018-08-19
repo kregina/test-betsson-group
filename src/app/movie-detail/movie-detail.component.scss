@@ -1,77 +1,122 @@
 section{
-  padding: 10px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 
-  .card{
-    margin: 20px;
-    padding: 0;
+  .content{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px 0;
+    background-image: radial-gradient(circle at 20% 50%,
+                        rgba(66, 66, 66, 0.98) 0%,
+                        rgba(66, 66, 66, 0.88) 100%);
 
-    .mat-card-header{
-      align-items: center;
-      background: rgba(97,97,97,.87);
-      padding: 15px 10px;
-
-      .mat-card-title{
-        margin: 0 -16px;
-
-        span{
-          font-size: 18px;
-        }
-      }
-
-      .mat-card-actions{
-        margin: 0;
-      }
+    & > * {
+      flex: 1 100%;
     }
 
-    .mat-card-content{
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
+    article{
+      .mat-card{
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
 
-      @media (min-width: 768px) {
-        flex-direction: row;
-      }
-
-      .image{
-        width: 100%;
-
-        img{
-          width: 100%;
-        }
-
-        @media (min-width: 768px) {
-          width: 30%;
-        }
-      }
-
-      .description{
-        width: 100%;
-
-        &::first-letter{
-          margin-left: 10px;
-        }
-
-        .ratings{
+        .mat-card-content{
           display: flex;
-          align-items: center;
+          flex-flow: row wrap;
 
-          span{
-            margin-left: 5px;
-            font-size: 16px;
+          & > * {
+            flex: 1 100%;
+          }
 
-            small{
-              color: rgb(97,97,97);
+          .image{
+            img{
+              box-shadow: 0 0 4px rgba(0,0,0,0.2);
+              border-radius: 4px;
+              width: 100%;
+            }
+
+            @media all and (min-width: 600px) {
+              flex: 2 0px;
+              order: 1;
+            }
+          }
+
+          .description{
+            padding: 0 30px;
+
+            .content-header{
+              display: flex;
+              margin: 0;
+              align-items: center;
+              flex-flow: row wrap;
+
+              h1{
+                font-size: 25px;
+                margin: 0;
+                font-weight: bold;
+
+                small{
+                  font-weight: 300;
+                  opacity: 0.6;
+                }
+              }
+
+              .vote-average{
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+              }
+
+              @media all and (min-width: 600px) {
+                flex: 1 0px;
+                order: 1;
+              }
+            }
+
+            @media all and (min-width: 600px) {
+              flex: 6 0px;
+              order: 2;
             }
           }
         }
-
-        @media (min-width: 768px) {
-          width: 70%;
-          margin-left: 10px;
-        }
       }
 
+      @media all and (min-width: 600px) {
+        flex: 6 0px;
+        order: 1;
+      }
+    }
+
+    aside{
+      padding: 0 20px;
+
+      h3{
+        font-size: 16px;
+        margin-top: 0;
+      }
+
+      .divider{
+        display: block;
+        height: 1px;
+        width: 100%;
+        background: rgba(255, 255, 255, .3);
+        margin: 25px 0;
+      }
+
+      .mat-chip{
+        cursor: pointer;
+      }
+
+      @media all and (min-width: 600px) {
+        flex: 2 0px;
+        order: 2;
+      }
+    }
+
+    @media all and (min-width: 600px) {
+      padding: 65px;
     }
   }
-
 }
+

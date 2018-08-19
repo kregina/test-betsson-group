@@ -5,8 +5,11 @@ import { environment } from '@env/environment';
   name: 'image'
 })
 export class ImagePipe implements PipeTransform {
-
   transform(value: string, width: number): string {
-    return `${environment.themoviedb.imageUrl}/w${width}${value}?api_key=${environment.themoviedb.apiKey}`;
+    return value
+      ? `${environment.themoviedb.imageUrl}/w${width}${value}?api_key=${
+          environment.themoviedb.apiKey
+        }`
+      : '/assets/poster-placeholder.png';
   }
 }

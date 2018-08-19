@@ -1,5 +1,5 @@
 section{
-  padding: 20px 65px;
+  padding: 20px;
 
   .chips{
     display: flex;
@@ -23,6 +23,10 @@ section{
         cursor: pointer;
       }
     }
+  }
+
+  @media all and (min-width: 600px) {
+    padding: 20px 65px;
   }
 
 }

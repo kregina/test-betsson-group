@@ -12,6 +12,7 @@ import { FeaturedCarouselComponent } from './featured-carousel/featured-carousel
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './shell/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,10 @@ import { FooterComponent } from './shell/footer/footer.component';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -17,12 +17,21 @@ export class MovieDetailComponent implements OnInit {
   showVideo = false;
   showRating = false;
   rating;
+  id$: Observable<any>;
+  keywords$: Observable<any>;
   movie$: Observable<any>;
 
   constructor(public route: ActivatedRoute, private service: ThemoviedbService) {
-    this.movie$ = this.route.params.pipe(
-      pluck('id'),
+    this.id$ = this.route.params.pipe(
+      pluck('id')
+    );
+
+    this.movie$ = this.id$.pipe(
       switchMap((id) => this.service.getMovieDetails(+id))
+    );
+
+    this.keywords$ = this.id$.pipe(
+      switchMap((id) => this.service.getMovieKeywords(+id).pipe(pluck('keywords')))
     );
   }
 

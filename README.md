@@ -1,27 +1,83 @@
-# FeTestBetssonGroup
+# Betsson Group: Movies Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+This project was developed as a challenge for Betsson Group Frontend Developer opportunity.
 
-## Development server
+# Sumary
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Scenario](#scenario)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Content](#content)
+- [Prerequisites](#prerequisites)
+- [Installing and running](#installing-and-running)
+- [Author](#author)
 
-## Code scaffolding
+## Scenario:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A great idea for a new movies collection application. This new site is based on angular application which it contain the below features:
 
-## Build
+### Features:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- **General**
+  - Mobile first
+  - Polished design.
+  - Responsive design.
+  - Reusable Animations.
+  - In memory cache.
+  - Consuming a real API.
+- **Movies List**
+  - List Movies.
+  - Search with autocomplete.
+  - Filter by Genre.
+  - Clicking on a particular movie redirect you to the selected &#39;movie detail&#39; page.
+- **Movie detail**
+  - Show selected movie detail information.
+  - Navigate back to &#39;movie list&#39;.
 
-## Running unit tests
+Pages are have proper urls and navigation work as follows:
+  * using the back and forward button of the browser take to the correct page.
+  * reloading the current page work as expected.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Technologies
 
-## Running end-to-end tests
+- [Angular](https://angular.io/)
+- [Angular CLI](https://cli.angular.io/)
+- [Angular Material](https://material.angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Rxjs](https://github.com/ReactiveX/rxjs)
+- [Sass](http://sass-lang.com/)
+- [In Memory Cache](https://github.com/angelnikolov/ngx-cacheable)
+- [NgxHmCarousel](https://alanzouhome.firebaseapp.com/package/NgxHmCarousel)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#### Content
 
-## Further help
+[The Movie DB API](https://www.themoviedb.org/documentation/api) was used as a database.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Prerequisites
+
+To run this project you need:
+
+[NodeJs](https://nodejs.org/en/download/)
+
+### Installing and running
+
+Clone the project:
+
+```
+git clone https://github.com/kregina/fe-test-betsson-group
+```
+
+Install the depedencies:
+
+```
+npm install
+```
+
+Run the application:
+
+```
+npm start
+```
+## Author
+
+* **Kelly Silva** - [Linkedin](https://www.linkedin.com/in/kregina/)

@@ -9,8 +9,8 @@
     </mat-sidenav>
 
     <mat-toolbar color="primary" class="toolbar"
-      [class.fixed]="fixedHeader$ | async"
-      [class.transparent]="transparentHeader$ | async">
+      [class.fixed]="!mobileQuery.matches && fixedHeader$ | async"
+      [class.transparent]="!mobileQuery.matches && transparentHeader$ | async">
       <button mat-icon-button (click)="snav.toggle()" *ngIf="mobileQuery.matches">
         <mat-icon>menu</mat-icon>
       </button>
