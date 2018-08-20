@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, pipe } from 'rxjs';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ThemoviedbService, PagedMovies, Genre } from '@app/core/themoviedb';
-import { pluck, switchMap, tap, filter, combineLatest } from 'rxjs/operators';
+import { pluck, switchMap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

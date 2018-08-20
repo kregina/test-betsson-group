@@ -4,7 +4,6 @@
       <mat-nav-list>
         <a mat-list-item routerLink=".">Home</a>
         <a mat-list-item [routerLink]="['/genres']">Genres</a>
-        <!-- <a mat-list-item routerLink=".">My Movies</a> -->
       </mat-nav-list>
     </mat-sidenav>
 
@@ -25,7 +24,6 @@
       <nav *ngIf="!mobileQuery.matches">
         <a mat-button routerLink=".">Home</a>
         <a mat-button [routerLink]="['/genres']">Genres</a>
-        <!-- <a mat-button routerLink=".">My Movies</a> -->
       </nav>
 
       <app-search [show]="showSearch$ | async"></app-search>

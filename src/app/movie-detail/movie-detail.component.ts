@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { pluck, switchMap, tap } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { ThemoviedbService } from '@app/core/themoviedb';
   styleUrls: ['./movie-detail.component.scss'],
   animations: [fade(), slideRight(-20, 500), slideLeft(20, 500)]
 })
-export class MovieDetailComponent implements OnInit {
+export class MovieDetailComponent {
   bookmark = true;
   showVideo = false;
   showRating = false;
@@ -33,9 +33,6 @@ export class MovieDetailComponent implements OnInit {
     this.keywords$ = this.id$.pipe(
       switchMap((id) => this.service.getMovieKeywords(+id).pipe(pluck('keywords')))
     );
-  }
-
-  ngOnInit() {
   }
 
   get iconName() {
@@ -59,7 +56,6 @@ export class MovieDetailComponent implements OnInit {
   }
 
   onRatingChanged(rating) {
-    console.log(rating);
     this.showRating = false;
     this.rating = rating;
   }

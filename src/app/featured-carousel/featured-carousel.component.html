@@ -1,6 +1,5 @@
 <ngx-hm-carousel
   [(ngModel)]="index"
-  (ngModelChange)="indexChanged($event)"
   [autoplay-speed]="3000"
   [autoplay]="true"
   [infinite]="infinite"
@@ -28,22 +27,6 @@
       </div>
     </article>
   </section>
-
-  <!-- <ng-template #carouselPrev>
-    <div class="click-area">
-      <i class="material-icons">keyboard_arrow_left</i>
-    </div>
-  </ng-template>
-  <ng-template #carouselNext>
-    <div class="click-area">
-      <i class="material-icons">keyboard_arrow_right</i>
-    </div>
-  </ng-template>
-
-  <ng-template #carouselDot let-model>
-    <div class="ball bg-accent"
-      [class.visible]="model.index === model.currentIndex"></div>
-  </ng-template> -->
 
   <ng-template #carouselProgress let-progress>
     <div class="progress" *ngIf="progress > 0"

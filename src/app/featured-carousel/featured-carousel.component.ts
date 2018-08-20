@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie, PagedMovies } from '@app/core/themoviedb';
-import { environment } from '@env/environment';
+import { PagedMovies } from '@app/core/themoviedb';
 
 @Component({
   selector: 'app-featured-carousel',
@@ -16,8 +15,5 @@ export class FeaturedCarouselComponent {
   direction = 'right';
   directionToggle = true;
   autoplay = true;
-
-  indexChanged(index) {
-  }
 
 }
