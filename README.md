@@ -1,6 +1,7 @@
 # Betsson Group: Movies Application
 
 This project was developed as a challenge for Betsson Group Frontend Developer opportunity.
+See the [Demo](http://bgroup.kellyregina.com.br) here.
 
 # Sumary
 
