@@ -64,7 +64,7 @@ To run this project you need:
 Clone the project:
 
 ```
-git clone https://github.com/kregina/fe-test-betsson-group
+git clone https://github.com/kregina/test-betsson-group
 ```
 
 Install the depedencies:
