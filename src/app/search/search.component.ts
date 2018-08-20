@@ -20,7 +20,6 @@ import { ThemoviedbService } from '@app/core/themoviedb';
 export class SearchComponent {
   @Input()
   show: boolean;
-
   searchControl: FormControl;
   keywords$: Observable<string>;
 
@@ -37,7 +36,8 @@ export class SearchComponent {
 
   searchChanged(value: string) {
     this.router.navigate(['/genres'], {
-      queryParams: { search: value ? value : undefined }
+      queryParams: { search: value ? value : undefined },
+      queryParamsHandling: 'merge'
     });
   }
 }
