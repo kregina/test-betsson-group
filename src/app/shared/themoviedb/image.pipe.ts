@@ -10,6 +10,6 @@ export class ImagePipe implements PipeTransform {
       ? `${environment.themoviedb.imageUrl}/w${width}${value}?api_key=${
           environment.themoviedb.apiKey
         }`
-      : '/assets/poster-placeholder.png';
+      : '/assets/images/poster-placeholder.png';
   }
 }
